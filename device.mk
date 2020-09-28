@@ -2,9 +2,9 @@
 $(call inherit-product, device/samsung/sm8250-common/sm8250.mk)
 
 # Proprietary blobs
-$(call inherit-product-if-exists, vendor/samsung/z3q/z3q-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/c2q/c2q-vendor.mk)
 
-DEVICE_PATH := device/samsung/z3q
+DEVICE_PATH := device/samsung/c2q
 
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -14,7 +14,7 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 
 # Resolution
-TARGET_SCREEN_HEIGHT := 3200
+TARGET_SCREEN_HEIGHT := 3088
 TARGET_SCREEN_WIDTH := 1440
 
 PRODUCT_AAPT_CONFIG := large

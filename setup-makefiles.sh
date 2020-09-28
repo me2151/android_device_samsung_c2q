@@ -5,7 +5,7 @@
 set -e
 
 # Required!
-export DEVICE=z3q
+export DEVICE=c2q
 export DEVICE_COMMON=sm8250-common
 export VENDOR=samsung
 
