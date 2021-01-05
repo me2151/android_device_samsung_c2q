@@ -53,5 +53,8 @@ TARGET_COPY_OUT_PRODUCT := system/product
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
+# Root
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
