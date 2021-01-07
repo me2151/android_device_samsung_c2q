@@ -1,27 +1,16 @@
-# Inherit common device configuration
-$(call inherit-product, device/samsung/sm8250-common/sm8250.mk)
+#
+# Copyright (C) 2018-2019 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+$(call inherit-product, device/samsung/sm8250-common/common.mk)
 
-# Proprietary blobs
-$(call inherit-product-if-exists, vendor/samsung/c2q/c2q-vendor.mk)
+# Dalvik-Config
+$(call inherit-product, frameworks/native/build/phone-xhdpi-12288-dalvik-heap.mk)
 
 DEVICE_PATH := device/samsung/c2q
 
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
-
-# Overlays
-PRODUCT_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
-
-# Resolution
-TARGET_SCREEN_HEIGHT := 3088
-TARGET_SCREEN_WIDTH := 1440
-
-PRODUCT_AAPT_CONFIG := large
-PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
-PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
-
-# Lineage
-ifneq ($(LINEAGE_BUILD),)
--include $(DEVICE_PATH)/device_lineage.mk
-endif
