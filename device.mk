@@ -18,6 +18,8 @@ DEVICE_PATH := device/samsung/beyond0qlte
 # Inherit common device configuration
 $(call inherit-product, device/samsung/sm8150-common/common.mk)
 
+PRODUCT_SHIPPING_API_LEVEL := 28
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
