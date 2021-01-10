@@ -36,3 +36,7 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
 	fstab.qcom
+
+# Skip Mount
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/skip_mount.cfg:system/etc/init/config/skip_mount.cfg
