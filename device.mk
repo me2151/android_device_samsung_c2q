@@ -17,6 +17,7 @@ DEVICE_PATH := device/samsung/beyond0qlte
 
 # Inherit common device configuration
 $(call inherit-product, device/samsung/sm8150-common/common.mk)
+$(call inherit-product, vendor/partner_gms/products/gms.mk)
 
 PRODUCT_SHIPPING_API_LEVEL := 28
 
@@ -31,12 +32,17 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.samsung-beyond0qlte
+    android.hardware.biometrics.fingerprint@2.1-service.samsung
 
 # Init
 PRODUCT_PACKAGES += \
 	fstab.qcom
 
+# Lights
+#PRODUCT_PACKAGES += \
+#	android.hardware.light-service.sm8150
+
 # Skip Mount
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/skip_mount.cfg:system/etc/init/config/skip_mount.cfg
+PRODUCT_PACKAGES += \
+    gsi_skip_mount.cfg
+	

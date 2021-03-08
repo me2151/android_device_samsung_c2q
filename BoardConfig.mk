@@ -18,6 +18,8 @@
 
 DEVICE_PATH := device/samsung/beyond0qlte
 
+WITH_GMS := true
+
 # APEX
 #DEXPREOPT_GENERATE_APEX_IMAGE := true
 TARGET_FLATTEN_APEX := true
@@ -61,5 +63,9 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 # Root
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
+# Sepolicy
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
+
