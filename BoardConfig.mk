@@ -16,7 +16,7 @@
 # Inherit common board flags
 -include device/samsung/sm8150-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/samsung/beyond0qlte
+DEVICE_PATH := device/samsung/d2q
 
 WITH_GMS := true
 
@@ -24,11 +24,20 @@ WITH_GMS := true
 #DEXPREOPT_GENERATE_APEX_IMAGE := true
 TARGET_FLATTEN_APEX := true
 
+# APN (imported from stock)
+CUSTOM_APNS_FILE := $(DEVICE_PATH)/configs/sprint_apns.xml
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
+# FOD
+TARGET_SURFACEFLINGER_FOD_LIB := //$(DEVICE_PATH):libfod_extension.d2q
+
+# HIDL
+DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/framework_manifest.xml
+
 # Kernel
-TARGET_KERNEL_CONFIG := lineage_beyond0qlte_defconfig
+TARGET_KERNEL_CONFIG := lineage_d2q_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/sm8150-common
 BOARD_BOOT_HEADER_VERSION := 1
 BOARD_KERNEL_BASE := 0x00000000
@@ -38,7 +47,7 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
-BOARD_KERNEL_SECOND_OFFSET := 0x00F00000
+BOARD_KERNEL_SECOND_OFFSET := 0x00000000
 BOARD_RAMDISK_OFFSET := 0x02000000
 BOARD_DTB_OFFSET := 0x01F00000
 BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --dtb_offset $(BOARD_DTB_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
@@ -62,9 +71,6 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # Root
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
-
-# Sepolicy
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
