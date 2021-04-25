@@ -17,7 +17,9 @@ DEVICE_PATH := device/samsung/d2q
 
 # Inherit common device configuration
 $(call inherit-product, device/samsung/sm8150-common/common.mk)
-$(call inherit-product, vendor/partner_gms/products/gms.mk)
+ifeq ($(WITH_GMS), true)
+	$(call inherit-product, vendor/partner_gms/products/gms.mk)
+endif
 
 PRODUCT_SHIPPING_API_LEVEL := 28
 
