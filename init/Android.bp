@@ -15,9 +15,9 @@
 //
 
 cc_library_static {
-    name: "libinit_d2q",
+    name: "libinit_c2q",
     recovery_available: true,
-    srcs: ["init_d2q.cpp"],
+    srcs: ["init_c2q.cpp"],
     include_dirs: [
         "system/core/base/include",
         "system/core/init"

@@ -18,17 +18,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from r5q device
-$(call inherit-product, device/samsung/d2q/device.mk)
+$(call inherit-product, device/samsung/c2q/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_d2q
-PRODUCT_DEVICE := d2q
+PRODUCT_NAME := lineage_c2q
+PRODUCT_DEVICE := c2q
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SM-N975U
+PRODUCT_MODEL := SM-N986U
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
 PRODUCT_AAPT_CONFIG := xxxhdpi
@@ -40,9 +40,9 @@ TARGET_SCREEN_WIDTH := 1440
 # Use the latest approved GMS identifiers
 PRODUCT_GMS_CLIENTID_BASE := android-samsung-ss
 PRODUCT_BUILD_PROP_OVERRIDES += \
-	PRODUCT_DEVICE=d2q \
-	TARGET_BOOTLOADER_BOARD_NAME=msmnile \
-	PRODUCT_NAME=d2qsq \
-	PRIVATE_BUILD_DESC="d2qsq-user 11 RP1A.200720.012 N975USQS5EUA1 release-keys"
+	PRODUCT_DEVICE=c2q \
+	TARGET_BOOTLOADER_BOARD_NAME=kona \
+	PRODUCT_NAME=c2qsq \
+	PRIVATE_BUILD_DESC="c2qsq-user 11 RP1A.200720.012 N975USQS5EUA1 release-keys"
 
-BUILD_FINGERPRINT := "samsung/d2qsq/d2q:11/RP1A.200720.012/N975USQS5EUA1:user/release-keys"
+BUILD_FINGERPRINT := "samsung/c2qsq/c2q:11/RP1A.200720.012/N975USQS5EUA1:user/release-keys"

@@ -56,14 +56,14 @@ void property_override_dual(char const system_prop[], char const vendor_prop[],
 void vendor_load_properties()
 {
     // fingerprint
-    property_override("ro.build.description", "d2qsq-user 11 RP1A.200720.012 N975USQS5EUA1 release-keys");
+    property_override("ro.build.description", "c2qsq-user 11 RP1A.200720.012 N975USQS5EUA1 release-keys");
     property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
 
     // privapp permisison control
     property_override("ro.control_privapp_permissions", "log");
     
-    property_override("ro.product.system.model", "SM-N975U");
-    property_override("ro.product.vendor.model", "SM-N975U");
-    property_override("ro.product.product.model", "SM-N975U");
-    property_override("ro.product.odm.model", "SM-N975U");
+    property_override("ro.product.system.model", "SM-N986U");
+    property_override("ro.product.vendor.model", "SM-N986U");
+    property_override("ro.product.product.model", "SM-N986U");
+    property_override("ro.product.odm.model", "SM-N986U");
 }
