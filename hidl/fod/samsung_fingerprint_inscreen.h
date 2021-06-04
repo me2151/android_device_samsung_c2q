@@ -17,19 +17,19 @@
 #ifndef SAMSUNG_FINGERPRINT_INSCREEN_H
 #define SAMSUNG_FINGERPRINT_INSCREEN_H
 
-#define FOD_SENSOR_X 590
-#define FOD_SENSOR_Y 2235
-#define FOD_SENSOR_SIZE 260
+#define FOD_SENSOR_X        554
+#define FOD_SENSOR_Y        2425
+#define FOD_SENSOR_SIZE     332
 
-#define FOD_ENABLE "fod_enable,1,1,0"
-#define FOD_DISABLE "fod_enable,0"
+#define FOD_ENABLE          "fod_enable,1,1"
+#define FOD_DISABLE         "fod_enable,0"
+
+#define FOD_SET_RECT        "set_fod_rect,554,2425,886,2757"
 #define FOD_MASK "319"
 
-#define FOD_SET_RECT "set_fod_rect,570,2235,850,2480"
-
 #define FINGERPRINT_ACQUIRED_VENDOR 6
-#define VENDORCODE_FINGER_DOWN 10002
-#define VENDORCODE_FINGER_UP 10001
+#define VENDORCODE_FINGER_DOWN 9002
+#define VENDORCODE_FINGER_UP 9001
 #define SEM_FINGER_STATE 22
 #define SEM_PARAM_PRESSED 2
 #define SEM_PARAM_RELEASED 1
