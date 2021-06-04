@@ -21,8 +21,8 @@ DEVICE_PATH := device/samsung/c2q
 #WITH_GMS := true
 
 # APEX
-#DEXPREOPT_GENERATE_APEX_IMAGE := true
-TARGET_FLATTEN_APEX := true
+DEXPREOPT_GENERATE_APEX_IMAGE := true
+#TARGET_FLATTEN_APEX := true
 
 # APN (imported from stock)
 CUSTOM_APNS_FILE := $(DEVICE_PATH)/configs/sprint_apns.xml
