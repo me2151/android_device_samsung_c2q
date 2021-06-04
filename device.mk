@@ -17,11 +17,9 @@ DEVICE_PATH := device/samsung/c2q
 
 # Inherit common device configuration
 $(call inherit-product, device/samsung/sm8250-common/common.mk)
-ifeq ($(WITH_GMS), true)
-	$(call inherit-product, vendor/partner_gms/products/gms.mk)
-endif
 
-PRODUCT_SHIPPING_API_LEVEL := 28
+PRODUCT_SHIPPING_API_LEVEL := 29
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
