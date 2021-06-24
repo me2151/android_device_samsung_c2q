@@ -21,10 +21,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/samsung/c2q/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/carbon/config/common.mk)
+$(call inherit-product, vendor/carbon/config/gsm.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_c2q
+PRODUCT_NAME := carbon_c2q
 PRODUCT_DEVICE := c2q
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
@@ -37,6 +38,7 @@ PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 TARGET_SCREEN_HEIGHT := 3088
 TARGET_SCREEN_WIDTH := 1440
 
+TARGET_USE_GENERIC_WALLPAPER := True
 # Use the latest approved GMS identifiers
 PRODUCT_GMS_CLIENTID_BASE := android-samsung-ss
 PRODUCT_BUILD_PROP_OVERRIDES += \
